@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# podman build -f src/main/docker/Containerfile.jvm -t quarkus/quarkus-demo-api-jvm .
+# podman build -t quay.io/stephennimmo/quarkus-demo-api .
 #
 # Then run the container using:
 #
-# podman run -i --rm -p 8080:8080 quarkus/quarkus-demo-api-jvm
+# podman run -i --rm -p 8080:8080 quay.io/stephennimmo/quarkus-demo-api
 #
 ###
 FROM registry.access.redhat.com/ubi9/openjdk-25-runtime:1.24

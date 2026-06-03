@@ -17,10 +17,17 @@ The API will be available at http://localhost:8080.
 
 ## Endpoints
 
-| Method | Path                | Description            |
-| ---    | ---                 | ---                    |
-| GET    | /api/v1/hello       | Hello World            |
-| GET    | /api/v1/hello/{name} | Hello with name param |
+| Method | Path                     | Description                               |
+| ---    | ---                      | ---                                       |
+| GET    | /api/v1/hello            | Hello World                               |
+| GET    | /api/v1/hello/{name}     | Hello with name param                     |
+| GET    | /api/v1/stress/{seconds} | Burn CPU for N seconds (query: threads=1) |
+
+## Testing
+
+```shell
+./mvnw test
+```
 
 ## Building
 
@@ -28,9 +35,12 @@ The API will be available at http://localhost:8080.
 ./mvnw package
 ```
 
-## Building a Container Image
+## Container Image
+
+Image: `quay.io/stephennimmo/quarkus-demo-api`
 
 ```shell
 ./mvnw package
-podman build -f src/main/docker/Containerfile.jvm -t quarkus/quarkus-demo-api-jvm .
+podman build -t quay.io/stephennimmo/quarkus-demo-api .
+podman push quay.io/stephennimmo/quarkus-demo-api
 ```

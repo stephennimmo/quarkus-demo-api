@@ -22,5 +22,5 @@ public class HelloResource {
     public Response helloName(@PathParam("name") String name) {
         return Response.ok("Hello, " + name + "!").build();
     }
-    
+
 }

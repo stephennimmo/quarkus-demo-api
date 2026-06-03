@@ -3,6 +3,10 @@ quarkus:
     enabled: false
   http:
     port: 8080
+  container-image:
+    registry: quay.io
+    group: stephennimmo
+    name: quarkus-demo-api
 
 "%dev":
   quarkus:
